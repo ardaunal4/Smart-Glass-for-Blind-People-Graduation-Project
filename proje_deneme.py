@@ -6,14 +6,14 @@ import time
 import os
 
 #def distance():
-b = 7 #cm
-angle = 85 #degree
-t = 320 #pixel
+b = 7                                                                                                             # cm
+angle = 85                                                                                                        # degree
+t = 320                                                                                                           # pixel
 pi = 3.1415926
 
-folder ="/home/pi/Desktop/blindpeople/sesler/"
+folder = "/home/pi/Desktop/blindpeople/sesler/"
 file_list = os.listdir(folder)
-def ses(name, distance):
+def ses(name, distance):                                                                                          # voice function                                                                    
     dist = round(0.01*distance)
     for file_name in file_list:
         if file_name == name + ".mpeg":
@@ -27,7 +27,7 @@ mesafe_yuz = 500
 mesafe_sira = 500
 mesafe_car = 500
 
-while True:
+while True:                                                                                                       # program starts                                                                                                  
     ret,kare = kamera.read()
     gri_kare = cv2.cvtColor(kare,cv2.COLOR_BGR2GRAY)
 
@@ -44,7 +44,7 @@ while True:
     
     #cv2.imshow("Yuz Tanıma",gri_kare)
 
-    #Yuzler
+                                                                                                                   # Face recognition script with distance measurement method
     if len(yuzler) < 3 and len(yuzler) > 1:
         first_array = yuzler[0]
         second_array = yuzler[1]
@@ -81,7 +81,7 @@ while True:
                         if mesafe_yuz > distance:
                             mesafe_yuz = distance
                             print(mesafe_yuz)
-    #Araba
+                                                                                                                      # Car recognition script with distance measurement method
     if len(car) < 3 and len(car) > 1:
         first_array = car[0]
         second_array = car[1]
@@ -116,7 +116,7 @@ while True:
                         if mesafe_car > distance:
                             mesafe_car = distance
 
-        # Sira
+                                                                                                                         # Desk recogition script with distance measurement method
     if len(sira) < 3 and len(sira) > 1:
         first_array = sira[0]
         second_array = sira[1]
