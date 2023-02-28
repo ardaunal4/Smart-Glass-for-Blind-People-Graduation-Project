@@ -1,2 +1,2 @@
-# Smart_Glass_for_Blind_People_old_version
+# Smart Glasses for Blind People old version
 It is my graduation project. Briefly, the project consists of dual camera module, Raspberry Pi, and earphone. When there is an obstacle, it recognises obstacles and measures distance of it. After object recognition and distance measurement, it gives the information of the object and distance of object to the person via earphone. is  There is a detailed report in repository.
